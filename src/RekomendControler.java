@@ -29,7 +29,8 @@ public class RekomendControler {
             } catch (NumberFormatException ex) {
                 view.displayErrorMessage("Zła wartość");
             }
-            view.setWynikiWyszukiwaniaTP(model.podajMiejsce() + wartosc);
+            view.setWynikiWyszukiwaniaTP(model.podajMiejsce() + " "+wartosc);
+            view.addItem("Nasza zmiana","4");
         }
     }
 }

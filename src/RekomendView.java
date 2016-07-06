@@ -39,6 +39,10 @@ public class RekomendView extends JFrame {
         wynikiWyszukiwaniaTP.setText(miejsce);
     }
 
+    public void addItem(String item,String keyItem){
+        comboBox1.addItem(new RekomendView.ComboItem(item, keyItem));
+    }
+
     void addZnajdzListener(ActionListener listenerForZnajdzBtn){
         znajdzButton.addActionListener(listenerForZnajdzBtn);
     }
