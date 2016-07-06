@@ -8,8 +8,8 @@ public class RekomendControler {
     private RekomendModel model;
     private RekomendView view;
 
-    public RekomendControler(RekomendView theView, RekomendModel theModel){
-        this.model=theModel;
+    public RekomendControler(RekomendView theView, RekomendModel theModel) {
+        this.model = theModel;
         this.view = theView;
 
         this.view.addZnajdzListener(new ZnajdzListener());
@@ -18,12 +18,18 @@ public class RekomendControler {
     private class ZnajdzListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String region ="";
+            String region = "";
+            int wartosc = 0;
+            try {
 
-            region = view.getRegion();
-            model.znajdzMiejsce(region);
 
-            view.setWynikiWyszukiwaniaTP(model.podajMiejsce());
+                region = view.getRegion();
+                wartosc = view.getIndex();
+                model.znajdzMiejsce(region);
+            } catch (NumberFormatException ex) {
+                view.displayErrorMessage("Zła wartość");
+            }
+            view.setWynikiWyszukiwaniaTP(model.podajMiejsce() + wartosc);
         }
     }
 }
