@@ -6,23 +6,28 @@ public class RekomendModel {
     private String miejsceWakacji;
 
 
-    public void znajdzMiejsce(String region){
+    public void znajdzMiejsce(String region) {
 
-switch (region) {
-case "wieś":
-miejsceWakacji = "Gospodarstwo agroturystyczne Balladyna";
-            break;
-        case "miasto":
-            miejsceWakacji = "Kino Wesoły Hipseter";
-            break;
-        case "góry":
-            miejsceWakacji = "Zajad Pod Banią";
-            break;
-        case "morze":
-            miejsceWakacji = "Krypa Babuni";
-            break;
-        default:
-            miejsceWakacji = "Sorry, zostajesz na zajęciach z programowania";
-    }}
+        switch (region) {
+            case "wieś":
+                miejsceWakacji = "Gospodarstwo agroturystyczne Balladyna";
+                break;
+            case "miasto":
+                miejsceWakacji = "Kino Wesoły Hipseter";
+                break;
+            case "góry":
+                miejsceWakacji = "Zajad Pod Banią";
+                break;
+            case "morze":
+                miejsceWakacji = "Krypa Babuni";
+                break;
+            default:
+                miejsceWakacji = "Sorry, zostajesz na zajęciach z programowania";
+        }
+    }
+
+    public String podajMiejsce(){
+        return miejsceWakacji;
+    }
 }
 
